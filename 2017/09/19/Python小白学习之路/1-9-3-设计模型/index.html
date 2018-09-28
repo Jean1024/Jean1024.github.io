@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="设计介绍 本示例完成“图书-英雄”信息的维护，需要存储两种数据：图书、英雄 图书表结构设计： 表名：BookInfo 图书名称：btitle 图书发布时间：bpub_date   英雄表结构设计： 表名：HeroInfo 英雄姓名：hname 英雄性别：hgender 英雄简介：hcontent 所属图书：hbook   图书-英雄的关系为一对多  数据库配置 在settings.py文件中，通过">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-9-3-设计模型">
+<meta property="og:url" content="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/index.html">
+<meta property="og:site_name" content="志林的博客">
+<meta property="og:description" content="设计介绍 本示例完成“图书-英雄”信息的维护，需要存储两种数据：图书、英雄 图书表结构设计： 表名：BookInfo 图书名称：btitle 图书发布时间：bpub_date   英雄表结构设计： 表名：HeroInfo 英雄姓名：hname 英雄性别：hgender 英雄简介：hcontent 所属图书：hbook   图书-英雄的关系为一对多  数据库配置 在settings.py文件中，通过">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5809200-fd10cf4356bf5d86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5809200-451d5421b34926d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5809200-93c7a1622887e725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5809200-9add775be1b7fca9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-28T05:04:43.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1-9-3-设计模型">
+<meta name="twitter:description" content="设计介绍 本示例完成“图书-英雄”信息的维护，需要存储两种数据：图书、英雄 图书表结构设计： 表名：BookInfo 图书名称：btitle 图书发布时间：bpub_date   英雄表结构设计： 表名：HeroInfo 英雄姓名：hname 英雄性别：hgender 英雄简介：hcontent 所属图书：hbook   图书-英雄的关系为一对多  数据库配置 在settings.py文件中，通过">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/5809200-fd10cf4356bf5d86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/"/>
+
+
+
+
+
+  <title>1-9-3-设计模型 | 志林的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9b3986bbeff249240c30f03e95b0b314";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">志林的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jean1024">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="志林的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">1-9-3-设计模型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T17:36:47+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="设计介绍"><a href="#设计介绍" class="headerlink" title="设计介绍"></a>设计介绍</h1><ul>
+<li>本示例完成“图书-英雄”信息的维护，需要存储两种数据：图书、英雄</li>
+<li>图书表结构设计：<ul>
+<li>表名：BookInfo</li>
+<li>图书名称：btitle</li>
+<li>图书发布时间：bpub_date</li>
+</ul>
+</li>
+<li>英雄表结构设计：<ul>
+<li>表名：HeroInfo</li>
+<li>英雄姓名：hname</li>
+<li>英雄性别：hgender</li>
+<li>英雄简介：hcontent</li>
+<li>所属图书：hbook</li>
+</ul>
+</li>
+<li>图书-英雄的关系为一对多</li>
+</ul>
+<h1 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h1><ul>
+<li>在settings.py文件中，通过DATABASES项进行数据库设置</li>
+<li>django支持的数据库包括：sqlite、mysql等主流数据库</li>
+<li><strong>Django默认使用SQLite数据库</strong></li>
+</ul>
+<h1 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h1><ul>
+<li>在一个项目中可以创建一到多个应用，每个应用进行一种业务处理</li>
+<li>创建应用的命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp booktest</span><br></pre></td></tr></table></figure>
+<ul>
+<li>应用的目录结构如下图</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/5809200-fd10cf4356bf5d86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="定义模型类"><a href="#定义模型类" class="headerlink" title="定义模型类"></a>定义模型类</h4><ul>
+<li>有一个数据表，就有一个模型类与之对应</li>
+<li>打开models.py文件，定义模型类</li>
+<li>引入包from django.db import models</li>
+<li>模型类继承自models.Model类</li>
+<li><strong>说明：不需要定义主键列，在生成时会自动添加，并且值为自动增长</strong></li>
+<li>当输出对象时，会调用对象的str方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from django.db import models</span><br><span class="line"></span><br><span class="line">class BookInfo(models.Model):</span><br><span class="line">    btitle = models.CharField(max_length=20)</span><br><span class="line">    bpub_date = models.DateTimeField()</span><br><span class="line">    def _ _str_ _(self):</span><br><span class="line">        return &quot;%d&quot; % self.pk</span><br><span class="line"></span><br><span class="line">class HeroInfo(models.Model):</span><br><span class="line">    hname = models.CharField(max_length=20)</span><br><span class="line">    hgender = models.BooleanField()</span><br><span class="line">    hcontent = models.CharField(max_length=100)</span><br><span class="line">    hBook = models.ForeignKey(&apos;BookInfo&apos;)</span><br><span class="line">    def _ _str_ _(self):</span><br><span class="line">        return &quot;%d&quot; % self.pk</span><br></pre></td></tr></table></figure>
+<h4 id="生成数据表"><a href="#生成数据表" class="headerlink" title="生成数据表"></a>生成数据表</h4><ul>
+<li>激活模型：编辑settings.py文件，将booktest应用加入到installed_apps中</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/5809200-451d5421b34926d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>生成迁移文件：根据模型类生成sql语句</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py makemigrations</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迁移文件被生成到应用的migrations目录</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/5809200-93c7a1622887e725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>执行迁移：执行sql语句生成数据表</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
+<h4 id="测试数据操作"><a href="#测试数据操作" class="headerlink" title="测试数据操作"></a>测试数据操作</h4><ul>
+<li>进入python shell，进行简单的模型API练习</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入shell后提示如下：</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/5809200-9add775be1b7fca9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>引入需要的包：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from booktest.models import BookInfo,HeroInfo</span><br><span class="line">from django.utils import timezone</span><br><span class="line">from datetime import *</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询所有图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BookInfo.objects.all()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = BookInfo()</span><br><span class="line">b.btitle=&quot;射雕英雄传&quot;</span><br><span class="line">b.bpub_date=datetime(year=1990,month=1,day=10)</span><br><span class="line">b.save()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查找图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b=BookInfo.objects.get(pk=1)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输出图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b</span><br><span class="line">b.id</span><br><span class="line">b.btitle</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b.btitle=u&quot;天龙八部&quot;</span><br><span class="line">b.save()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除图书信息：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.delete()</span><br></pre></td></tr></table></figure>
+<h4 id="关联对象的操作"><a href="#关联对象的操作" class="headerlink" title="关联对象的操作"></a>关联对象的操作</h4><ul>
+<li>对于HeroInfo可以按照上面的操作方式进行</li>
+<li>添加，注意添加关联对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">h=HeroInfo()</span><br><span class="line">h.htitle=u&apos;郭靖&apos;</span><br><span class="line">h.hgender=True</span><br><span class="line">h.hcontent=u&apos;降龙十八掌&apos;</span><br><span class="line">h.hBook=b</span><br><span class="line">h.save()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获得关联集合：返回当前book对象的所有hero</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b.heroinfo_set.all()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>有一个HeroInfo存在，必须要有一个BookInfo对象，提供了创建关联的数据：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h=b.heroinfo_set.create(htitle=u&apos;黄蓉&apos;,hgender=False,hcontent=u&apos;打狗棍法&apos;)</span><br><span class="line">h</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/19/Electron/electron-builder依赖包下载失败（winCodeSign）/" rel="next" title="electron-builder依赖包下载失败（winCodeSign）">
+                <i class="fa fa-chevron-left"></i> electron-builder依赖包下载失败（winCodeSign）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/20/Python小白学习之路/1-9-4-管理站点/" rel="prev" title="1-9-4-管理站点">
+                1-9-4-管理站点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jean1024</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jean1024" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ysuqzl@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/101634814113770979524" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qiuzhilin1" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/8995557/zhilin-qiu" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/channel/UCNSi4CCUpJT32b-jwogBXzA?view_as=subscriber" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/2e46779cd343" target="_blank" title="JianShu">
+                      
+                        <i class="fa fa-fw fa-jianshu"></i>JianShu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计介绍"><span class="nav-number">1.</span> <span class="nav-text">设计介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库配置"><span class="nav-number">2.</span> <span class="nav-text">数据库配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建应用"><span class="nav-number">3.</span> <span class="nav-text">创建应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义模型类"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">定义模型类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成数据表"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">生成数据表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试数据操作"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">测试数据操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关联对象的操作"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">关联对象的操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jean1024</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="服务器 运行如下命令可以开启服务器  1python manage.py runserver ip:port  可以不写ip，默认端口为8000 这是一个纯python编写的轻量级web服务器，仅在开发阶段使用 服务器成功启动后，提示如下信息  [图片上传失败…(image-241f06-1532596736860)]  默认端口是8000，可以修改端口  1python manage.py ru">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-9-4-管理站点">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/index.html">
+<meta property="og:site_name" content="志林的博客">
+<meta property="og:description" content="服务器 运行如下命令可以开启服务器  1python manage.py runserver ip:port  可以不写ip，默认端口为8000 这是一个纯python编写的轻量级web服务器，仅在开发阶段使用 服务器成功启动后，提示如下信息  [图片上传失败…(image-241f06-1532596736860)]  默认端口是8000，可以修改端口  1python manage.py ru">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-28T05:04:50.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1-9-4-管理站点">
+<meta name="twitter:description" content="服务器 运行如下命令可以开启服务器  1python manage.py runserver ip:port  可以不写ip，默认端口为8000 这是一个纯python编写的轻量级web服务器，仅在开发阶段使用 服务器成功启动后，提示如下信息  [图片上传失败…(image-241f06-1532596736860)]  默认端口是8000，可以修改端口  1python manage.py ru">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/"/>
+
+
+
+
+
+  <title>1-9-4-管理站点 | 志林的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9b3986bbeff249240c30f03e95b0b314";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">志林的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jean1024">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="志林的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">1-9-4-管理站点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T17:36:47+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><ul>
+<li>运行如下命令可以开启服务器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver ip:port</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以不写ip，默认端口为8000</li>
+<li>这是一个纯python编写的轻量级web服务器，仅在开发阶段使用</li>
+<li>服务器成功启动后，提示如下信息</li>
+</ul>
+<p>[图片上传失败…(image-241f06-1532596736860)]</p>
+<ul>
+<li>默认端口是8000，可以修改端口</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver 8080</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开浏览器，输入网址“127.0.0.1:8000”可以打开默认页面</li>
+<li>如果修改文件不需要重启服务器，如果增删文件需要重启服务器</li>
+<li>通过ctrl+c停止服务器</li>
+</ul>
+<h1 id="管理操作"><a href="#管理操作" class="headerlink" title="管理操作"></a>管理操作</h1><ul>
+<li>站点分为“内容发布”和“公共访问”两部分</li>
+<li>“内容发布”的部分负责添加、修改、删除内容，开发这些重复的功能是一件单调乏味、缺乏创造力的工作。为此，Django会根据定义的模型类完全自动地生成管理模块</li>
+</ul>
+<h4 id="使用django的管理"><a href="#使用django的管理" class="headerlink" title="使用django的管理"></a>使用django的管理</h4><ul>
+<li>创建一个管理员用户</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser，按提示输入用户名、邮箱、密码</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动服务器，通过“127.0.0.1:8000/admin”访问，输入上面创建的用户名、密码完成登录</li>
+<li>进入管理站点，默认可以对groups、users进行管理</li>
+</ul>
+<h4 id="管理界面本地化"><a href="#管理界面本地化" class="headerlink" title="管理界面本地化"></a>管理界面本地化</h4><ul>
+<li>编辑settings.py文件，设置编码、时区</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANGUAGE_CODE = &apos;zh-Hans&apos;</span><br><span class="line">TIME_ZONE = &apos;Asia/Shanghai&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="向admin注册booktest的模型"><a href="#向admin注册booktest的模型" class="headerlink" title="向admin注册booktest的模型"></a>向admin注册booktest的模型</h4><ul>
+<li>打开booktest/admin.py文件，注册模型</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from models import BookInfo</span><br><span class="line">admin.site.register(BookInfo)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>刷新管理页面，可以对BookInfo的数据进行增删改查操作</li>
+<li>问题：如果在str方法中返回中文，在修改和添加时会报ascii的错误</li>
+<li>解决：在str()方法中，将字符串末尾添加“.encode(‘utf-8’)”</li>
+</ul>
+<h4 id="自定义管理页面"><a href="#自定义管理页面" class="headerlink" title="自定义管理页面"></a>自定义管理页面</h4><ul>
+<li>Django提供了admin.ModelAdmin类</li>
+<li>通过定义ModelAdmin的子类，来定义模型在Admin界面的显示方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class QuestionAdmin(admin.ModelAdmin):</span><br><span class="line">    ...</span><br><span class="line">admin.site.register(Question, QuestionAdmin)</span><br></pre></td></tr></table></figure>
+<h6 id="列表页属性"><a href="#列表页属性" class="headerlink" title="列表页属性"></a>列表页属性</h6><ul>
+<li>list_display：显示字段，可以点击列头进行排序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list_display = [&apos;pk&apos;, &apos;btitle&apos;, &apos;bpub_date&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>list_filter：过滤字段，过滤框会出现在右侧</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list_filter = [&apos;btitle&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>search_fields：搜索字段，搜索框会出现在上侧</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search_fields = [&apos;btitle&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>list_per_page：分页，分页框会出现在下侧</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list_per_page = 10</span><br></pre></td></tr></table></figure>
+<h6 id="添加、修改页属性"><a href="#添加、修改页属性" class="headerlink" title="添加、修改页属性"></a>添加、修改页属性</h6><ul>
+<li>fields：属性的先后顺序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fields = [&apos;bpub_date&apos;, &apos;btitle&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fieldsets：属性分组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fieldsets = [</span><br><span class="line">    (&apos;basic&apos;,&#123;&apos;fields&apos;: [&apos;btitle&apos;]&#125;),</span><br><span class="line">    (&apos;more&apos;, &#123;&apos;fields&apos;: [&apos;bpub_date&apos;]&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="关联对象"><a href="#关联对象" class="headerlink" title="关联对象"></a>关联对象</h4><ul>
+<li><p>对于HeroInfo模型类，有两种注册方式</p>
+<ul>
+<li>方式一：与BookInfo模型类相同</li>
+<li>方式二：关联注册</li>
+</ul>
+</li>
+<li><p>按照BookInfor的注册方式完成HeroInfo的注册</p>
+</li>
+<li><p>接下来实现关联注册</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from models import BookInfo,HeroInfo</span><br><span class="line"></span><br><span class="line">class HeroInfoInline(admin.StackedInline):</span><br><span class="line">    model = HeroInfo</span><br><span class="line">    extra = 2</span><br><span class="line"></span><br><span class="line">class BookInfoAdmin(admin.ModelAdmin):</span><br><span class="line">    inlines = [HeroInfoInline]</span><br><span class="line"></span><br><span class="line">admin.site.register(BookInfo, BookInfoAdmin)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以将内嵌的方式改为表格</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class HeroInfoInline(admin.TabularInline)</span><br></pre></td></tr></table></figure>
+<h4 id="布尔值的显示"><a href="#布尔值的显示" class="headerlink" title="布尔值的显示"></a>布尔值的显示</h4><ul>
+<li>发布性别的显示不是一个直观的结果，可以使用方法进行封装</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def gender(self):</span><br><span class="line">    if self.hgender:</span><br><span class="line">        return &apos;男&apos;</span><br><span class="line">    else:</span><br><span class="line">        return &apos;女&apos;</span><br><span class="line">gender.short_description = &apos;性别&apos;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在admin注册中使用gender代替hgender</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class HeroInfoAdmin(admin.ModelAdmin):</span><br><span class="line">    list_display = [&apos;id&apos;, &apos;hname&apos;, &apos;gender&apos;, &apos;hcontent&apos;]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/19/Python小白学习之路/1-9-3-设计模型/" rel="next" title="1-9-3-设计模型">
+                <i class="fa fa-chevron-left"></i> 1-9-3-设计模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/Python小白学习之路/1-9-Django学习/" rel="prev" title="1-9-Django学习">
+                1-9-Django学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jean1024</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jean1024" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ysuqzl@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/101634814113770979524" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qiuzhilin1" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/8995557/zhilin-qiu" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/channel/UCNSi4CCUpJT32b-jwogBXzA?view_as=subscriber" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/2e46779cd343" target="_blank" title="JianShu">
+                      
+                        <i class="fa fa-fw fa-jianshu"></i>JianShu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器"><span class="nav-number">1.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理操作"><span class="nav-number">2.</span> <span class="nav-text">管理操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用django的管理"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">使用django的管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理界面本地化"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">管理界面本地化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向admin注册booktest的模型"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">向admin注册booktest的模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义管理页面"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">自定义管理页面</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#列表页属性"><span class="nav-number">2.0.0.4.0.1.</span> <span class="nav-text">列表页属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#添加、修改页属性"><span class="nav-number">2.0.0.4.0.2.</span> <span class="nav-text">添加、修改页属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关联对象"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">关联对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔值的显示"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">布尔值的显示</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jean1024</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
