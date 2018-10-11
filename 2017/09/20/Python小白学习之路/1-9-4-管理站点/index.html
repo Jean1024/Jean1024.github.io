@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-9-4-管理站点">
-<meta property="og:url" content="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/20/Python小白学习之路/1-9-4-管理站点/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="服务器 运行如下命令可以开启服务器  1python manage.py runserver ip:port  可以不写ip，默认端口为8000 这是一个纯python编写的轻量级web服务器，仅在开发阶段使用 服务器成功启动后，提示如下信息  [图片上传失败…(image-241f06-1532596736860)]  默认端口是8000，可以修改端口  1python manage.py ru">
 <meta property="og:locale" content="zh-Hans">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/20/Python小白学习之路/1-9-4-管理站点/"/>
 
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/Python小白学习之路/1-9-4-管理站点/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/20/Python小白学习之路/1-9-4-管理站点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -285,6 +285,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/20/Python小白学习之路/1-9-4-管理站点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/20/Python小白学习之路/1-9-4-管理站点/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -438,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/19/Python小白学习之路/1-9-3-设计模型/" rel="next" title="1-9-3-设计模型">
-                <i class="fa fa-chevron-left"></i> 1-9-3-设计模型
+              <a href="/2017/09/19/Electron/electron-builder依赖包下载失败（winCodeSign）/" rel="next" title="electron-builder依赖包下载失败（winCodeSign）">
+                <i class="fa fa-chevron-left"></i> electron-builder依赖包下载失败（winCodeSign）
               </a>
             
           </div>
@@ -481,9 +491,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -796,26 +804,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

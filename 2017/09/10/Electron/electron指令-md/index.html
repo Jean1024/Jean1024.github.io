@@ -83,7 +83,7 @@
 <meta name="keywords" content="electron">
 <meta property="og:type" content="article">
 <meta property="og:title" content="electron指令-md">
-<meta property="og:url" content="http://yoursite.com/2017/09/10/Electron/electron指令-md/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/10/Electron/electron指令-md/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="1. 主进程向渲染进程发送指令 主进程代码  12345678910111213141516const electron = require(&apos;electron&apos;);// 控制应用生命周期的模块const &amp;#123;app&amp;#125; = electron;// 创建本地浏览器窗口的模块const &amp;#123;BrowserWindow&amp;#125; = electron;ipc.on(&apos;sy-s">
 <meta property="og:locale" content="zh-Hans">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/10/Electron/electron指令-md/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/10/Electron/electron指令-md/"/>
 
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/Electron/electron指令-md/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/10/Electron/electron指令-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -285,6 +285,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/10/Electron/electron指令-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/10/Electron/electron指令-md/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -399,9 +409,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -714,26 +722,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

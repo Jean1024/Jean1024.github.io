@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-9-3-设计模型">
-<meta property="og:url" content="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/19/Python小白学习之路/1-9-3-设计模型/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="设计介绍 本示例完成“图书-英雄”信息的维护，需要存储两种数据：图书、英雄 图书表结构设计： 表名：BookInfo 图书名称：btitle 图书发布时间：bpub_date   英雄表结构设计： 表名：HeroInfo 英雄姓名：hname 英雄性别：hgender 英雄简介：hcontent 所属图书：hbook   图书-英雄的关系为一对多  数据库配置 在settings.py文件中，通过">
 <meta property="og:locale" content="zh-Hans">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/19/Python小白学习之路/1-9-3-设计模型/"/>
 
 
 
@@ -248,7 +248,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/Python小白学习之路/1-9-3-设计模型/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/19/Python小白学习之路/1-9-3-设计模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -290,6 +290,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/19/Python小白学习之路/1-9-3-设计模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/19/Python小白学习之路/1-9-3-设计模型/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -451,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/19/Electron/electron-builder依赖包下载失败（winCodeSign）/" rel="next" title="electron-builder依赖包下载失败（winCodeSign）">
-                <i class="fa fa-chevron-left"></i> electron-builder依赖包下载失败（winCodeSign）
+              <a href="/2017/09/18/Python小白学习之路/1-9-2-安装Django/" rel="next" title="1-9-2-安装Django">
+                <i class="fa fa-chevron-left"></i> 1-9-2-安装Django
               </a>
             
           </div>
@@ -461,8 +471,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/20/Python小白学习之路/1-9-4-管理站点/" rel="prev" title="1-9-4-管理站点">
-                1-9-4-管理站点 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/19/Electron/electron-builder依赖包下载失败（winCodeSign）/" rel="prev" title="electron-builder依赖包下载失败（winCodeSign）">
+                electron-builder依赖包下载失败（winCodeSign） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,9 +504,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -809,26 +817,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

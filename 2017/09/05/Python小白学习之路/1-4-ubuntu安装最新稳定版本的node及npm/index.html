@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-4-ubuntu安装最新稳定版本的node及npm">
-<meta property="og:url" content="http://yoursite.com/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="背景 通过ubuntu官方apt安装工具安装的node是最新LTS版本的，而本人是个有点强迫症的人，喜欢追求新的东西，也就是想方设法想要去安装最新版本的node，所以本文也就产生了，附上ubuntu安装node和npm的命令行命令:12sudo apt install nodejs-legacysudo apt install npm 最新版本安装方法  安装npm1sudo apt instal">
 <meta property="og:locale" content="zh-Hans">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/"/>
 
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -285,6 +285,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/05/Python小白学习之路/1-4-ubuntu安装最新稳定版本的node及npm/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -396,9 +406,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -711,26 +719,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

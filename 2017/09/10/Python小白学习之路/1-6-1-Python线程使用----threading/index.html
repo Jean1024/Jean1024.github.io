@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-6-1-Python线程使用----threading">
-<meta property="og:url" content="http://yoursite.com/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="多线程-threading python的thread模块是比较底层的模块，python的threading模块是对thread做了一些包装的，可以更加方便的被使用  1. 使用threading模块单线程执行12345678910#coding=utf-8import timedef saySorry():    print(&amp;quot;亲爱的，我错了，我能吃饭了吗？&amp;quot;)    tim">
 <meta property="og:locale" content="zh-Hans">
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/"/>
 
 
 
@@ -246,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -288,6 +288,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/10/Python小白学习之路/1-6-1-Python线程使用----threading/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -399,9 +409,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -714,26 +722,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

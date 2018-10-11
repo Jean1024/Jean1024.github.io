@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-5-1-Python进程使用----fork">
-<meta property="og:url" content="http://yoursite.com/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="1.进程的创建-fork Python的os模块封装了常见的系统调用，其中就包括fork，可以在Python程序中轻松创建子进程：  import os  # 注意，fork函数，只在Unix/Linux/Mac上运行，windows不可以 pid = os.fork()  if pid == 0:     print(&amp;apos;哈哈1&amp;apos;) else:     print(&amp;apos;">
 <meta property="og:locale" content="zh-Hans">
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/"/>
 
 
 
@@ -246,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -288,6 +288,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/06/Python小白学习之路/1-5-1-Python进程使用----fork/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -418,9 +428,7 @@ else:
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -733,26 +741,37 @@ else:
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

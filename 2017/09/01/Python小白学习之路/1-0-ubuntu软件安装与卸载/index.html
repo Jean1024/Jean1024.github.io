@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-0-ubuntu软件安装与卸载">
-<meta property="og:url" content="http://yoursite.com/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="ubuntu软件安装与卸载更新Ubuntu软件下载地址1. 寻找国内镜像源所谓的镜像源：可以理解为提供下载软件的地方，比如Android手机上可以下载软件的91手机助手；iOS手机上可以下载软件的AppStore   2. 备份Ubuntu默认的源地址1sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup  3. 更新源服务器列表">
 <meta property="og:locale" content="zh-Hans">
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/"/>
 
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -297,6 +297,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/01/Python小白学习之路/1-0-ubuntu软件安装与卸载/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -400,9 +410,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -715,26 +723,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

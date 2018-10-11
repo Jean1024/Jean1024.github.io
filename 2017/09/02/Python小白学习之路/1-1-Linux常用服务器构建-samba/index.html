@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-1-Linux常用服务器构建-samba">
-<meta property="og:url" content="http://yoursite.com/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="1. 介绍Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，能够完成在windows、mac操作系统下访问linux系统下的共享文件 2. 安装使用apt命令安装samba 3. 配置3.1 创建存放共享文件的路径在home路径下操作：修改其权限： 修改samba的配置文件： 3.2 创建samba账户 4 重启samba当对配置进行了更新，需要重启samba软件后才可生效 重">
 <meta property="og:locale" content="zh-Hans">
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/"/>
 
 
 
@@ -258,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -300,6 +300,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/02/Python小白学习之路/1-1-Linux常用服务器构建-samba/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -411,9 +421,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -726,26 +734,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

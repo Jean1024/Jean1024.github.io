@@ -83,7 +83,7 @@
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-9-2-安装Django">
-<meta property="og:url" content="http://yoursite.com/2017/09/18/Python小白学习之路/1-9-2-安装Django/index.html">
+<meta property="og:url" content="http://blog.qiuzhilin.com.cn/2017/09/18/Python小白学习之路/1-9-2-安装Django/index.html">
 <meta property="og:site_name" content="志林的博客">
 <meta property="og:description" content="1. 安装Django==1.8.2 创建进入虚拟环境 12mkvirtualenv h6workon h6  进入项目根目录,安装Django 1234cd python3pip install django==1.8.2# 查看安装pip freeze  创建项目 1django-admin startproject test1   test1目录结构如下 目录说明：  manage.py：一">
 <meta property="og:locale" content="zh-Hans">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/18/Python小白学习之路/1-9-2-安装Django/"/>
+  <link rel="canonical" href="http://blog.qiuzhilin.com.cn/2017/09/18/Python小白学习之路/1-9-2-安装Django/"/>
 
 
 
@@ -245,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/Python小白学习之路/1-9-2-安装Django/">
+    <link itemprop="mainEntityOfPage" href="http://blog.qiuzhilin.com.cn/2017/09/18/Python小白学习之路/1-9-2-安装Django/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jean1024">
@@ -287,6 +287,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/18/Python小白学习之路/1-9-2-安装Django/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/18/Python小白学习之路/1-9-2-安装Django/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -376,8 +386,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/19/Electron/electron-builder依赖包下载失败（winCodeSign）/" rel="prev" title="electron-builder依赖包下载失败（winCodeSign）">
-                electron-builder依赖包下载失败（winCodeSign） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/19/Python小白学习之路/1-9-3-设计模型/" rel="prev" title="1-9-3-设计模型">
+                1-9-3-设计模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -409,9 +419,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTk5NS8xNjUyMg=="></div>
     </div>
-
   
 
 
@@ -724,26 +732,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WVOMDIGh6Sg9bNEnBo4kAHqk-gzGzoHsz',
+        appKey: 'kbexAbqFV8upAFbdqhghkrcA',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
